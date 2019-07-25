@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+function checkUsername(){
+	var uname = document.getElementById("i1");
+	
+	if(uname.length >=6 && uname.length <=10)
+		document.getElementById('s1').innerHTML = "";
+	else
+		document.getElementById('s1').innerHTML = "Enter username should have 6-10 characters!";
+}
+
+function checkPassword(){
+	var uname = document.getElementById("i2");
+	
+	if(uname.length >=4 && uname.length <=8)
+		document.getElementById('s2').innerHTML = "";
+	else
+		document.getElementById('s2').innerHTML = "Enter password should have 4-8 characters!";
+}
+</script>
+</head>
+<body>
+<form>
+<fieldset>
+<legend>Login</legend>
+Username : <input type="text" name="uname" id="i1" onChange="checkUsername()"> <span id="s1" style="color:red"></span><br><br>
+Password : <input type="password" name="password" id="i2" onChange="checkPassword()"> <span id="s2" style="color:red"></span><br><br>
+<input type="submit" value="SUBMIT" name="submit">
+<input type="reset" value="RESET" name="reset">
+</fieldset>
+</form>
+</body>
+</html>

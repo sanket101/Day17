@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="demo.js"></script>
+		<script>
+			function exit(){
+				res = confirm("Do you really want to close the current window?");
+				if(res)
+					close();
+				else
+					alert("You chose to continue...");
+			}
+			
+			function xyz(){
+				var tf = document.getElementById("mi");
+				//alert("Welcome!" + tf.value);
+				document.getElementById('s1').innerHTML = tf.value;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Javascript Demo</h1>
+		<hr>
+		<h2>
+		<script>
+			var a = 10;
+			a = false;
+			a = 1.5;
+			a = "hello";
+			a = new Date();
+			document.write("<br>Type of a : " + typeof(a));
+		</script>
+		<br>
+		<br>
+		<input type="text" name="t1" id="mi">
+		<button onClick="xyz()">GREET</button>
+		<button onClick="exit()">EXIT</button>
+		Welcome! <span id="s1"></span>
+		</h2>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function checkUsername(){
+	var uname = document.getElementById("i1");
+	console.log(uname.value.length);
+	if(uname.value.length >=6 && uname.value.length <=10)
+		document.getElementById('s1').innerHTML = "";
+	else
+		document.getElementById('s1').innerHTML = "Enter username should have 6-10 characters!";
+}
+
+function checkPassword(){
+	var uname = document.getElementById("i2");
+	
+	if(uname.value.length >=4 && uname.value.length <=8)
+		document.getElementById('s2').innerHTML = "";
+	else
+		document.getElementById('s2').innerHTML = "Enter password should have 4-8 characters!";
+}
+
+function checkConfirmPassword(){
+	var p1 = document.getElementById("i2");
+	var p2 = document.getElementById("i3");
+	
+	if(p1.value == (p2.value))
+		document.getElementById('s3').innerHTML = "";
+	else	
+		document.getElementById('s3').innerHTML = "Please enter correct password";
+}
+
+function nextPage(){
+
+	var p1 = document.getElementById("i2");
+	var p2 = document.getElementById("i3");
+	var uname = document.getElementById("i1");
+	
+	if(p1.value == p2.value && uname != "")
+		window.location.href = "file:///C:/Users/sangiri1/Desktop/Html/success.html";
+		
+	
+	return false;
+}
+
+</script>
+</head>
+<body>
+<form onSubmit="return nextPage()">
+<fieldset>
+<legend>Register</legend>
+Username : <input type="text" name="uname" id="i1" onChange="checkUsername()"> <span id="s1" style="color:red"></span><br><br>
+Password : <input type="password" name="password" id="i2" onChange="checkPassword()"> <span id="s2" style="color:red"></span><br><br>
+Confirm Password : <input type="password" name="cpassword" id="i3" onChange="checkConfirmPassword()"> <span id="s3" style="color:red"></span><br><br>
+<input type="submit" value="SUBMIT" name="submit">
+<input type="reset" value="RESET" name="reset">
+</fieldset>
+</form>
+</body>
+</html>
